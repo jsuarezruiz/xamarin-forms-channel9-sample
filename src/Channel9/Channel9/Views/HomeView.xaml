@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Channel9.Controls;assembly=Channel9" 
+    xmlns:templates="clr-namespace:Channel9.Views.Templates;assembly=Channel9"
+    x:Class="Channel9.Views.HomeView"
+    BackgroundColor="{StaticResource WhiteColor}"
+    Title="Channel 9">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="BannerStyle" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="350" />
+            </Style>
+
+            <Style x:Key="BannerImageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style x:Key="HorizontalListStyle" TargetType="controls:HorizontalList">
+                <Setter Property="HeightRequest" Value="180" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+
+            <Style x:Key="BannerFeedTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="12" />
+            </Style>
+
+            <Style x:Key="BannerTitleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="SeeAllTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="12" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Search">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="channel9-search"/>
+                    <On Platform="UWP" Value="Assets/channel9-search.png"/>
+                    <On Platform="GTK" Value="Images/channel9-search.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid  
+            BackgroundColor="{StaticResource WhiteColor}">
+            <ScrollView>
+                <Grid
+                    RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!-- BANNER -->
+                    <Grid
+                        Grid.Row="0"
+                        Style="{StaticResource BannerStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*" />
+                            <ColumnDefinition Width="0.4*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image 
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="0"
+                            Grid.RowSpan="4"
+                            Source="{Binding Banner.ItemThumbnail}"
+                            Style="{StaticResource BannerImageStyle}"/>
+                        <Grid     
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="0"
+                            Grid.RowSpan="4"
+                            BackgroundColor="{StaticResource BlackColor}"
+                            Opacity="0.25">
+                            <Grid.IsVisible>
+                                <OnPlatform x:TypeArguments="x:Boolean">
+                                    <On Platform="Android, iOS, UWP" Value="True"/>
+                                    <On Platform="GTK" Value="False"/>
+                                </OnPlatform>
+                            </Grid.IsVisible>
+                        </Grid>
+                        <Label 
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Text="The most recent"
+                            Style="{StaticResource BannerFeedTextStyle}"/>
+                        <Label  
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Text="{Binding Banner.FeedId, Converter={StaticResource ToUpperConverter}}"
+                            Style="{StaticResource BannerFeedTextStyle}"/>
+                        <Label   
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            Text="{Binding Banner.Title}"
+                            Style="{StaticResource BannerTitleTextStyle}"/>
+                        <Label     
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            Text="SEE ALL EPISODES"
+                            Style="{StaticResource SeeAllTextStyle}"/>
+                    </Grid>
+                    <!-- MAIN CHANNEL 9 EPISODES -->
+                    <controls:HorizontalList 
+                        Grid.Row="1"
+                        ListOrientation="Horizontal" 
+                        ItemsSource="{Binding Channel9}"        
+                        Style="{StaticResource HorizontalListStyle}"
+                        SelectedCommand="{Binding PlayerCommand}"
+                        Margin="0, -12, 0, 0">
+                        <controls:HorizontalList.ItemTemplate>
+                            <DataTemplate>
+                                <templates:HomeSmallItemTemplate01 />
+                            </DataTemplate>
+                        </controls:HorizontalList.ItemTemplate>
+                    </controls:HorizontalList>
+                    <!-- XAMARIN SHOW -->
+                    <controls:HorizontalList  
+                        Grid.Row="2"
+                        ListOrientation="Horizontal" 
+                        ItemsSource="{Binding XamarinShow}"
+                        Style="{StaticResource HorizontalListStyle}"
+                        SelectedCommand="{Binding PlayerCommand}">
+                        <controls:HorizontalList.ItemTemplate>
+                            <DataTemplate>
+                                <templates:HomeBigItemTemplate />
+                            </DataTemplate>
+                        </controls:HorizontalList.ItemTemplate>
+                    </controls:HorizontalList>
+                    <!-- BUILD 2017 -->
+                    <controls:HorizontalList  
+                        Grid.Row="3"
+                        ListOrientation="Horizontal" 
+                        ItemsSource="{Binding Build}"
+                        Style="{StaticResource HorizontalListStyle}"
+                        SelectedCommand="{Binding PlayerCommand}">
+                        <controls:HorizontalList.ItemTemplate>
+                            <DataTemplate>
+                                <templates:HomeSmallItemTemplate02 />
+                            </DataTemplate>
+                        </controls:HorizontalList.ItemTemplate>
+                    </controls:HorizontalList>
+                </Grid>
+            </ScrollView>
+            <ActivityIndicator
+                IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                Color="{StaticResource AccentColor}"
+                BackgroundColor="{StaticResource WhiteColor}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

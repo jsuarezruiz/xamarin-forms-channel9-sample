@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Channel9.Views.Templates.HomeSmallItemTemplate01">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HomeSmallItemPanelStyle" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="180" />
+                <Setter Property="WidthRequest" Value="180" />
+            </Style>
+
+            <Style x:Key="HomeSmallItemImageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style x:Key="HomeSmallItemTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource AccentColor}" />
+            </Style>
+
+            <Style x:Key="FeedTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="BlackFeedTextStyle" TargetType="Label"
+                   BasedOn="{StaticResource FeedTextStyle}">
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            </Style>
+
+            <Style x:Key="TitleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="BlackTitleTextStyle" TargetType="Label"
+                   BasedOn="{StaticResource TitleTextStyle}">
+                <Setter Property="TextColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+            
+            <Style x:Key="DescriptionTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="12, 0, 12, 12" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid    
+            BackgroundColor="{StaticResource WhiteColor}"
+            Style="{StaticResource HomeSmallItemPanelStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image 
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Source="{Binding ItemThumbnail}"
+                    Style="{StaticResource HomeSmallItemImageStyle}"/>
+                <Grid 
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    BackgroundColor="{StaticResource BlackColor}"
+                    Opacity="0.25">
+                    <Grid.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="Android, iOS, UWP" Value="True"/>
+                            <On Platform="GTK" Value="False"/>
+                        </OnPlatform>
+                    </Grid.IsVisible>
+                </Grid>
+                <Label 
+                    Grid.Row="1"
+                    Text="{Binding FeedId, Converter={StaticResource ToUpperConverter}}" 
+                    Style="{StaticResource FeedTextStyle}"/>
+                <Label 
+                    Grid.Row="2"
+                    Text="{Binding Title}"
+                    Style="{StaticResource TitleTextStyle}"/>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

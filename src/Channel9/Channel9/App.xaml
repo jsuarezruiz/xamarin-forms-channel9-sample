@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
+             xmlns:converters="clr-namespace:Channel9.Converters;assembly=Channel9"
+             x:Class="Channel9.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- GENERAL COLORS -->
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+
+            <!-- THEME COLORS -->
+            <Color x:Key="AccentColor">#F47622</Color>
+
+            <!-- CONVERTERS -->
+            <converters:HtmlToTextConverter x:Key="HtmlToTextConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter" />
+            <converters:ToUpperConverter x:Key="ToUpperConverter" />
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

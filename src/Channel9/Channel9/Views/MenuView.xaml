@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Channel9.Views.MenuView" 
+    xmlns:behaviors="clr-namespace:Channel9.Behaviors;assembly=Channel9"
+    xmlns:templates="clr-namespace:Channel9.Views.Templates;assembly=Channel9"
+    Title=" ">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="GTK" Value="Images/channel9-menu.png"/>
+        </OnPlatform>
+    </ContentPage.Icon>
+    <ContentPage.Content>
+        <Grid>
+            <ListView    
+                ItemsSource="{Binding MenuItems}"
+                CachingStrategy="RecycleElement"
+                SeparatorVisibility="None"
+                SeparatorColor="Transparent"
+                behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding ItemSelectedCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:MenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
