@@ -5,8 +5,14 @@
     xmlns:controls="clr-namespace:Channel9.Controls;assembly=Channel9" 
     xmlns:templates="clr-namespace:Channel9.Views.Templates;assembly=Channel9"
     x:Class="Channel9.Views.HomeView"
-    BackgroundColor="{StaticResource WhiteColor}"
-    Title="Channel 9">
+    BackgroundColor="{StaticResource WhiteColor}">
+    <ContentPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android, iOS" Value=""/>
+            <On Platform="UWP" Value="Channel 9"/>
+            <On Platform="GTK" Value="Channel 9"/>
+        </OnPlatform>
+    </ContentPage.Title>
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -53,8 +59,8 @@
             Text="Search">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="Android, iOS" Value="channel9-search"/>
-                    <On Platform="UWP" Value="Assets/channel9-search.png"/>
+                    <On Platform="Android, iOS" Value="channel9_search"/>
+                    <On Platform="UWP" Value="Assets/channel9_search.png"/>
                     <On Platform="GTK" Value="Images/channel9-search.png"/>
                 </OnPlatform>
             </ToolbarItem.Icon>
@@ -143,7 +149,7 @@
                             </DataTemplate>
                         </controls:HorizontalList.ItemTemplate>
                     </controls:HorizontalList>
-                    <!-- XAMARIN SHOW -->
+                    <!-- XAMARIN SHOW --> 
                     <controls:HorizontalList  
                         Grid.Row="2"
                         ListOrientation="Horizontal" 
@@ -175,7 +181,7 @@
                 IsVisible="{Binding IsBusy}"
                 IsRunning="{Binding IsBusy}"
                 Color="{StaticResource AccentColor}"
-                BackgroundColor="{StaticResource WhiteColor}"
+                BackgroundColor="Transparent"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"/>
         </Grid>

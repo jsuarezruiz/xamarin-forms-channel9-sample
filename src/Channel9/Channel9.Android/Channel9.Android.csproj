@@ -140,6 +140,9 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\ToolbarLogo.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -162,55 +165,55 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-home.png" />
+    <AndroidResource Include="Resources\drawable\channel9_home.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-logo.png" />
+    <AndroidResource Include="Resources\drawable\channel9_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-menu.png" />
+    <AndroidResource Include="Resources\drawable\channel9_menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-popular.png" />
+    <AndroidResource Include="Resources\drawable\channel9_popular.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-search.png" />
+    <AndroidResource Include="Resources\drawable\channel9_search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-settings.png" />
+    <AndroidResource Include="Resources\drawable\channel9_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-watchlist.png" />
+    <AndroidResource Include="Resources\drawable\channel9_watchlist.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-events.png" />
+    <AndroidResource Include="Resources\drawable\channel9_events.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-series.png" />
+    <AndroidResource Include="Resources\drawable\channel9_series.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-shows.png" />
+    <AndroidResource Include="Resources\drawable\channel9_shows.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-toprated.png" />
+    <AndroidResource Include="Resources\drawable\channel9_toprated.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-mostviewed.png" />
+    <AndroidResource Include="Resources\drawable\channel9_mostviewed.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-fresh.png" />
+    <AndroidResource Include="Resources\drawable\channel9_fresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-myqueue.png" />
+    <AndroidResource Include="Resources\drawable\channel9_myqueue.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-downloads.png" />
+    <AndroidResource Include="Resources\drawable\channel9_downloads.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-tags.png" />
+    <AndroidResource Include="Resources\drawable\channel9_tags.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\channel9-featured.png" />
+    <AndroidResource Include="Resources\drawable\channel9_featured.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />

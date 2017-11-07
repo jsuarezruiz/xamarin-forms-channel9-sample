@@ -8,14 +8,14 @@ namespace Channel9.Droid
         Label = "Channel 9",
         Icon = "@drawable/icon",
         Theme = "@style/MainTheme",
-        MainLauncher = true, 
+        MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            ToolbarResource = Resource.Layout.ToolbarLogo;
 
             base.OnCreate(bundle);
 

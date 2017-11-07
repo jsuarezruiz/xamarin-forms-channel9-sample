@@ -152,55 +152,55 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-home.png" />
+    <BundleResource Include="Resources\channel9_downloads.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-logo.png" />
+    <BundleResource Include="Resources\channel9_events.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-menu.png" />
+    <BundleResource Include="Resources\channel9_featured.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-popular.png" />
+    <BundleResource Include="Resources\channel9_fresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-search.png" />
+    <BundleResource Include="Resources\channel9_home.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-settings.png" />
+    <BundleResource Include="Resources\channel9_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-watchlist.png" />
+    <BundleResource Include="Resources\channel9_menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-events.png" />
+    <BundleResource Include="Resources\channel9_mostviewed.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-series.png" />
+    <BundleResource Include="Resources\channel9_myqueue.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-shows.png" />
+    <BundleResource Include="Resources\channel9_popular.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-toprated.png" />
+    <BundleResource Include="Resources\channel9_search.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-mostviewed.png" />
+    <BundleResource Include="Resources\channel9_series.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-fresh.png" />
+    <BundleResource Include="Resources\channel9_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-myqueue.png" />
+    <BundleResource Include="Resources\channel9_shows.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-downloads.png" />
+    <BundleResource Include="Resources\channel9_tags.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-tags.png" />
+    <BundleResource Include="Resources\channel9_toprated.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\channel9-featured.png" />
+    <BundleResource Include="Resources\channel9_watchlist.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets')" />
