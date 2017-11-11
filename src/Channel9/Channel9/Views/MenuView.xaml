@@ -8,6 +8,7 @@
     Title=" ">
     <ContentPage.Icon>
         <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="iOS" Value="channel9_menu"/>
             <On Platform="GTK" Value="Images/channel9-menu.png"/>
         </OnPlatform>
     </ContentPage.Icon>
